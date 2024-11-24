@@ -1,0 +1,82 @@
+:root {
+  --grid-row-size: 50; /* 横のマスの数 */
+  --grid-col-size: 50; /* 縦のマスの数 */
+  --cell-size: 15px; /* セルのサイズ */
+  background-color: #f0f0f0;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  text-align: center;
+  height: 3vh;
+  font-size: 6px;
+  font-weight: bold;
+}
+
+.grid-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center ; /* 水平方向に左寄せ */
+  align-items: flex-start; /* 垂直方向に上寄せ */
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f0f0;
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(var(--grid-row-siz), var(--cell-size));
+  grid-template-columns: repeat(var(--grid-col-size), var(--cell-size));
+  gap: 1px; /* セル間の隙間を1pxに設定 */
+}
+
+.grid-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: lightgray;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.grid-cell.active {
+  background-color: red;
+}
+
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column; /* 縦に並べる */
+  align-items: center; /* ボタンを中央に配置 */
+  gap: 10px; /* ボタン間の間隔を設定 */
+  margin-left: 20px; /* グリッドとボタンの間に隙間を作る */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 10vw;
+}
+
+.rm-button {
+  background-color: #f44336; /* 赤 */
+}
+
+.add-button {
+  background-color: #007bff; /* 緑 */
+}
+
+.button-run {
+  background-color: #4CAF50;
+}
+
+/* ホバー時の背景色を変更 */
+button:hover {
+  opacity:0.5;
+}
